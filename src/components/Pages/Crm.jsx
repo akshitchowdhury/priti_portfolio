@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import crmImg from "../../assets/porfolio/crm/whatsapp.png";
 import pmaxImg from "../../assets/porfolio/crm/productpmax.png";
 import mailerImg from "../../assets/porfolio/crm/mailer.png";
-import crmHero from "../../assets/porfolio/crm/crmHero.png";
+import crmHero from "../../assets/porfolio/crm/crmhero.png";
 import crmHero2 from "../../assets/porfolio/crm/mailer.png";
 import crmHero3 from "../../assets/porfolio/crm/whatsapp.png";
 import gallery1 from "../../assets/porfolio/crm/1.jpg";

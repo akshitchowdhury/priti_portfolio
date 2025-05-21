@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css' // Import your CSS file for styles
+import flower from "../../assets/text-flower.png"
 const Home = () => {
   return (
     <>
@@ -30,7 +31,7 @@ const Home = () => {
   <h1 className="title-gloock-regular text-[#B6B855] font-bold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
     <span className="inline-block align-middle">Priti R</span>
     <img 
-      src="/src/assets/text-flower.png" 
+      src={flower} 
       alt="flower" 
       className="inline-block align-middle h-[100px] ml-2"
     />

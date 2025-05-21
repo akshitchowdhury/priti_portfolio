@@ -5,6 +5,9 @@ import i3 from "../../assets/crm.png";
 import i4 from "../../assets/apparelgraphics.png";
 import i5 from "../../assets/pacagingdesign.png";
 import i6 from "../../assets/art.png";
+  const handleClick = ()=>{
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
 const cards = [
   {
@@ -26,35 +29,37 @@ const cards = [
     link: "/crm",
     color: "#F0D8CC",
   },
-  {
-    img: i4,
-    label: "Branding",
-    link: "/apparel-graphics",
-    color: "#D97643",
-  },
-  {
-    img: i2,
-    label: "Performance ADs",
-    link: "/packaging-design",
+  // {
+  //   img: i4,
+  //   label: "Branding",
+  //   link: "/apparel-graphics",
+  //   color: "#D97643",
+  // },
+  // {
+  //   img: i2,
+  //   label: "Performance ADs",
+  //   link: "/packaging-design",
     
-    color: "#E3BB88",
-  },
+  //   color: "#E3BB88",
+  // },
 
-  {
-    img: i6,
-    label: "Art",
-    link: "/art",
-    color: "#F0D8CC",
-  },
+  // {
+  //   img: i6,
+  //   label: "Art",
+  //   link: "/art",
+  //   color: "#F0D8CC",
+  // },
 ];
 
-const Portfolio = () => {
+const Portfolio = ({id}) => {
   return (
+    <section id={id}>
     <div className="bg-[#BEB95C] min-h-screen flex items-center justify-center px-4 sm:px-10 py-[100px]">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-[100px] w-full max-w-6xl">
         {cards.map((card, idx) => (
           <Link
             to={card.link}
+            onClick={handleClick}
             key={idx}
             className="group relative w-full transition-transform duration-500 hover:scale-105"
           >
@@ -131,6 +136,7 @@ const Portfolio = () => {
         }
       `}</style>
     </div>
+    </section>
   );
 };
 

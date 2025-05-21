@@ -1,5 +1,7 @@
 import React from 'react';
 import './About.css'; // Import the CSS file for styling
+import aboutLogo from "../../assets/aboutLogo.png"
+import aboutFlower from "../../assets/aboutFlower.png"
 const About = () => {
   return (
     
@@ -8,11 +10,11 @@ const About = () => {
         {/* Left Section - Image */}
         <div className="bg-[#F5E6DA] flex flex-row  justify-start items-center p-20 w-full md:w-1/2 ">
           <img
-            src="/src/assets/aboutLogo.png"
+            src={aboutLogo}
             alt="Decorative G with flower"
             className="max-h-[400px] object-contain"
           />
-          <img src='/src/assets/aboutFlower.png' alt="flower" className="-mx-[140px] h-[150px] w-[150px] " />
+          <img src={aboutFlower} alt="flower" className="-mx-[140px] h-[150px] w-[150px] " />
         </div>
 
         {/* Divider */}

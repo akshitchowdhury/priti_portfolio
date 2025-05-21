@@ -7,19 +7,18 @@ import Skills from '../components/Skills/Skills'
 import Contact from '../components/Contact/Contact'
 import ControlledOpenSpeedDial from './SpeedDia'
 
-
 const MainPage = () => {
   return (
     <>
-    <Home/>
-    <ControlledOpenSpeedDial/>
-   <About/>
-   <Pallette/>
-   <Portfolio/>
-   <Skills/>
-   <Contact/>
-   </>
-  )
-}
+      <Home id="home" />
+      <ControlledOpenSpeedDial />
+      <About id="about" />
+      <Pallette id="pallette" />
+      <Portfolio id="portfolio" />
+      <Skills id="skills" />
+      <Contact id="contact" />
+    </>
+  );
+};
 
-export default MainPage
+export default MainPage;

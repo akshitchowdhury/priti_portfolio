@@ -15,6 +15,7 @@ import i9 from "../../assets/porfolio/ai/9.jpg";
 import hero1 from "../../assets/porfolio/ai/hero1.png";
 import hero2 from "../../assets/porfolio/ai/hero2.png";
 import hero3 from "../../assets/porfolio/ai/hero3.png";
+import ControlledOpenSpeedDial from '../../MainPage/SpeedDia';
 
 // Carousel settings
 const carouselSettings = {
@@ -204,7 +205,7 @@ const PerformanceAds = () => {
     : aiGallery.filter(item => item.tool.toLowerCase().includes(activeTool.toLowerCase()));
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div id='top-section' className="min-h-screen text-white bg-gradient-to-br from-[#1a0f1f] via-[#8e2d6b] to-[#2b0a2f]">
       {/* Hero Carousel Section */}
       <motion.div 
         className="relative h-[60vh] overflow-hidden"
@@ -261,6 +262,7 @@ const PerformanceAds = () => {
         </motion.div>
       </motion.div>
 
+          <ControlledOpenSpeedDial/>
       {/* AI Tools Section */}
       <motion.section 
         className="px-6 md:px-16 py-16"

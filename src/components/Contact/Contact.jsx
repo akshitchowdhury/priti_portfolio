@@ -6,8 +6,9 @@ import linkedin from "../../assets/linkedin.png";
 import map from "../../assets/map.png";
 import mail from "../../assets/mail.png";
 
-const Contact = () => {
+const Contact = ({id}) => {
   return (
+    <section id={id}>
     <div className="bg-[#beb95c] w-full py-10 px-4">
       <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-12">Contact</h2>
       <div className="flex flex-col lg:flex-row justify-start items-start max-w-6xl mx-auto gap-10">
@@ -46,6 +47,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

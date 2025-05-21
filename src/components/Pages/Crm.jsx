@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Slider from "react-slick";
 
@@ -136,6 +136,9 @@ const Crm = () => {
   const filteredImages = activeFilter === "all" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === activeFilter);
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}, []);
 
   return (
     <div className="bg-[#f9f5ef] text-gray-900 font-['Inter'] min-h-screen">

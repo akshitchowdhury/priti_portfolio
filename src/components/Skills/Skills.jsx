@@ -2,6 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Skills.css';
 import GalleryShow from './GalleryShow/GalleryShow';
+// First Row Imports
+import i1 from "/src/assets/skills/figma.png";
+import i2 from "/src/assets/skills/photoshop.png";
+import i3 from "/src/assets/skills/adobeillustrator.png";
+import i4 from "/src/assets/skills/id.png";
+import i5 from "/src/assets/skills/midjourney.png";
+import i6 from "/src/assets/skills/xd.png";
+
+// Second Row Imports
+import i1_2 from "/src/assets/skills/adobe.png";
+import i2_2 from "/src/assets/skills/pencil.png";
+import i3_2 from "/src/assets/skills/word.png";
+import i4_2 from "/src/assets/skills/ppt.png";
 
 // Asymmetric container animation
 const container = {
@@ -41,24 +54,25 @@ const getHoverEffect = () => ({
   }
 });
 
-const Skills = () => {
-  const firstRowSkills = [
-    { src: "/src/assets/skills/figma.png", alt: "Figma" },
-    { src: "/src/assets/skills/photoshop.png", alt: "Photoshop" },
-    { src: "/src/assets/skills/adobeillustrator.png", alt: "Illustrator" },
-    { src: "/src/assets/skills/id.png", alt: "InDesign" },
-    { src: "/src/assets/skills/midjourney.png", alt: "Midjourney" },
-    { src: "/src/assets/skills/xd.png", alt: "Adobe XD" },
-  ];
+const Skills = ({id}) => {
+const firstRowSkills = [
+  { src: i1, alt: "Figma" },
+  { src: i2, alt: "Photoshop" },
+  { src: i3, alt: "Illustrator" },
+  { src: i4, alt: "InDesign" },
+  { src: i5, alt: "Midjourney" },
+  { src: i6, alt: "Adobe XD" },
+];
 
-  const secondRowSkills = [
-    { src: "/src/assets/skills/adobe.png", alt: "Adobe" },
-    { src: "/src/assets/skills/pencil.png", alt: "Pencil" },
-    { src: "/src/assets/skills/word.png", alt: "Word" },
-    { src: "/src/assets/skills/ppt.png", alt: "PowerPoint" },
-  ];
+const secondRowSkills = [
+  { src: i1_2, alt: "Adobe" },
+  { src: i2_2, alt: "Pencil" },
+  { src: i3_2, alt: "Word" },
+  { src: i4_2, alt: "PowerPoint" },
+];
 
   return (
+    <section id={id}>
     <div className="bg-[#EED4C5] py-16 px-4 sm:px-6 flex flex-col items-center">
       {/* Title */}
       <motion.h2 
@@ -191,6 +205,7 @@ const Skills = () => {
         <GalleryShow />
       </div>
     </div>
+    </section>
   );
 };
 

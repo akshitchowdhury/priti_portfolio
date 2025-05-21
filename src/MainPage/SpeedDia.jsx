@@ -1,24 +1,36 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
-import SpaIcon from '@mui/icons-material/Spa'; // Flower/lily icon
+import SpaIcon from '@mui/icons-material/Spa';
 
-// Custom SpeedDial icon component
+// Icons
+import HomeIcon from '@mui/icons-material/Home';
+import BuildIcon from '@mui/icons-material/Build'; // Skills
+import WorkIcon from '@mui/icons-material/Work'; // Portfolio
+import ContactMailIcon from '@mui/icons-material/ContactMail'; // Contact
+import { Link } from 'react-router-dom';
+
+// Custom SpeedDial icon
 const CustomSpeedDialIcon = () => (
-  <SpaIcon sx={{ color: '#D8A48F' }} /> // Beige-pink color
+  <SpaIcon sx={{ color: '#D8A48F' }} />
 );
 
+// Scroll handler
+const handleScroll = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+// Actions with section IDs
 const actions = [
-  { icon: <FileCopyIcon sx={{ color: '#D8A48F' }} />, name: 'Copy' },
-  { icon: <SaveIcon sx={{ color: '#D8A48F' }} />, name: 'Save' },
-  { icon: <PrintIcon sx={{ color: '#D8A48F' }} />, name: 'Print' },
-  { icon: <ShareIcon sx={{ color: '#D8A48F' }} />, name: 'Share' },
+  { icon: <HomeIcon sx={{ color: '#D8A48F' }} />, name: 'Home', sectionId: 'home' },
+  { icon: <BuildIcon sx={{ color: '#D8A48F' }} />, name: 'Skills', sectionId: 'skills' },
+  { icon: <WorkIcon sx={{ color: '#D8A48F' }} />, name: 'Portfolio', sectionId: 'portfolio' },
+  { icon: <ContactMailIcon sx={{ color: '#D8A48F' }} />, name: 'Contact', sectionId: 'contact' },
 ];
 
 export default function ControlledOpenSpeedDial() {
@@ -27,8 +39,8 @@ export default function ControlledOpenSpeedDial() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={{ 
-      transform: 'translateZ(0px)', 
+    <Box sx={{
+      transform: 'translateZ(0px)',
       flexGrow: 1,
       position: 'fixed',
       bottom: 150,
@@ -37,15 +49,15 @@ export default function ControlledOpenSpeedDial() {
       zIndex: 1000,
     }}>
       <SpeedDial
-        ariaLabel="SpeedDial controlled open example"
-        sx={{ 
-          position: 'absolute', 
-          bottom: 16, 
+        ariaLabel="Navigation SpeedDial"
+        sx={{
+          position: 'absolute',
+          bottom: 16,
           right: 16,
           '& .MuiFab-primary': {
-            backgroundColor: '#F8EDEB', // Light beige-pink background
+            backgroundColor: '#F8EDEB',
             '&:hover': {
-              backgroundColor: '#F5CAC3', // Darker beige-pink on hover
+              backgroundColor: '#F5CAC3',
             }
           }
         }}
@@ -59,7 +71,11 @@ export default function ControlledOpenSpeedDial() {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
-            onClick={handleClose}
+            onClick={() => {
+              <Link to="/"></Link>
+              handleScroll(action.sectionId);
+              handleClose();
+            }}
             sx={{
               backgroundColor: '#F8EDEB',
               '&:hover': {
